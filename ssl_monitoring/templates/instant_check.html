@@ -1,0 +1,48 @@
+{% extends "base.html" %}
+
+{% block content %}
+       
+
+        <div id="page-wrapper">
+            <div class="row">
+                <div class="col-lg-12">
+                    <h1 class="page-header">SSL Certificate state for {{ url }}</h1>
+                </div>
+                <!-- /.col-lg-12 -->
+            </div>
+            <!-- /.row -->
+            <div class="row">
+               <div class="col-lg-10" style="float: none;margin: 0 auto;">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            Check Results
+                        </div>
+                        <div class="panel-body">
+                            <form role="form" id="instant_check_form">
+                                <div class="col-lg-12">
+                                    <div class="form-group">
+                                        <label>URL</label>
+                                        <input class="form-control" id="instant_check_url" value="{{ url }}">
+                                    </div>
+                                    
+                                </div>
+                                <div class="col-lg-12">
+                                    <button type="submit" class="btn btn-primary" id="instant_check_sbmt">Check</button>
+                                </div>
+                            </form>
+                            <br />
+                            {% for i in results %}
+
+                                <div class="col-lg-12" style="color:{{ i.color }};padding: 10px;text-align: center;font-size: 20px;">
+                                        <p class="fa {{ i.icon }}">
+                                        {{ i.message }}
+                                        </p>
+                                </div>
+                            {% endfor %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- /.row -->
+            
+{% endblock %}
