@@ -18,8 +18,13 @@ from django.contrib import admin
 import ssl_monitoring.views
 
 urlpatterns = [
-    url(r'^admin/', admin.site.urls),
+    url(r'^admin/', admin.site.urls, name='admin' ),
     url(r'^dasboard/', ssl_monitoring.views.index),
+    url(r'^services_list/', ssl_monitoring.views.services_list, name='services_list'),
     url(r'^$', ssl_monitoring.views.index, name="index"),
-    url(r'^instant_check/(?P<url>.*)$', ssl_monitoring.views.instant_check)
+    url(r'^instant_check/(?P<url>.*)$', ssl_monitoring.views.instant_check),
+    url(r'^how_to/', ssl_monitoring.views.how_to, name='how_to')
 ]
+
+
+admin.site.site_header = 'SSL Review Certificate Review 2.0 Control Panel'
