@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Service, Environment, Url, Domain, UrlCheck
+from .models import Service, Environment, Url, Domain, UrlCheck, Contact
 
 
 
@@ -9,3 +9,4 @@ admin.site.register(Service)
 admin.site.register(Environment)
 admin.site.register(Url)
 admin.site.register(UrlCheck)
+admin.site.register(Contact)
